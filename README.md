@@ -23,7 +23,17 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 
 ## 🐍 1. Python — Limpieza, EDA y Machine Learning
 
-Limpieza de datos, separación en niveles (patente/trimestre), 6 visualizaciones exploratorias, y modelado predictivo (Ridge + Random Forest).
+**Qué se hizo:**
+- **Limpieza**: se corrigieron tipos de datos (fechas, categorías) y se separó el dataset original de 55 columnas en dos niveles: `patent_level` (30,118 filas, atributos por patente individual) y `quarterly_level` (199 filas, estadísticas agregadas por trimestre). Se documentaron 408 valores nulos en el target, confirmados como estructurales (último trimestre sin "trimestre siguiente" conocido), no como error de datos.
+- **EDA**: 6 visualizaciones explorando evolución temporal, estacionalidad, tendencias tecnológicas, distribución por tipo de patente, correlación entre keywords, y complejidad de títulos por era.
+- **Modelado ML**: se entrenaron modelos Ridge y Random Forest para predecir `target_patent_count_next_quarter`, con validación respetando el orden temporal (80% train / 20% test, sin mezclar aleatoriamente).
+
+**Qué se concluyó:**
+- La innovación de Ericsson muestra **dos ciclos de boom** (≈2000 y ≈2012-2025) separados por un estancamiento (2004-2010), coincidiendo con las revoluciones de 2G/3G y 4G/5G/smartphones.
+- **No hay estacionalidad relevante** dentro del año — la actividad de patentamiento es constante trimestre a trimestre.
+- **Cloud/Edge lideró la adopción temprana** (~2000), mientras que 5G, AI/ML e IoT explotaron después de 2020.
+- Existe un **cluster de tecnologías de infraestructura correlacionadas** (network/energy/antenna/data), mientras que **AI/ML tiene una trayectoria más independiente**.
+- **Predecir el nivel absoluto de patentes fracasó** (R² negativo) por un cambio de régimen entre train (valores bajos, media 96.5) y test (valores altos, media 371.5), forzando a los modelos a extrapolar fuera de rango. Al reformular el problema como predicción del **cambio** (`delta`) en vez del nivel, Random Forest mejoró sustancialmente, aunque **ningún modelo de ML superó al ARIMA de R** (ver sección de R).
 
 <table>
 <tr>
@@ -46,7 +56,17 @@ Limpieza de datos, separación en niveles (patente/trimestre), 6 visualizaciones
 
 ## 📈 2. R — Series de Tiempo y ARIMA
 
-Descomposición estacional (STL), tests de estacionariedad (ADF/KPSS), y modelo ARIMA(0,1,1) con drift, usado como benchmark estadístico contra los modelos de ML.
+**Qué se hizo:**
+- **Descomposición STL** de la serie `patent_count` trimestral, separándola en tendencia, estacionalidad y residuo.
+- **Tests de estacionariedad** (ADF y KPSS) sobre la serie original y diferenciada.
+- **Modelo ARIMA automático** (`auto.arima()`), y **forecast** a 8 trimestres (2 años) hacia adelante.
+
+**Qué se concluyó:**
+- La componente estacional tiene una amplitud pequeña frente al rango total de la serie, **confirmando estadísticamente** la ausencia de estacionalidad relevante ya vista en Python.
+- La serie **no es estacionaria** en su forma original (ADF p=0.47, KPSS p<0.05), pero **sí lo es tras una diferenciación** (d=1, ADF p=0.01).
+- El mejor modelo encontrado fue **ARIMA(0,1,1) con drift**: sin componente estacional (confirmando de nuevo su irrelevancia) y con una tendencia de crecimiento sostenido (~1.98 patentes/trimestre).
+- El forecast proyecta continuidad del ritmo actual (~400-415 patentes/trimestre) para 2025-2027, con intervalos de confianza que se amplían con el horizonte.
+- **Este modelo (RMSE=29.05) superó tanto al baseline naive (RMSE=43.93) como a los modelos de ML de Python**, siendo el mejor predictor de todo el proyecto — un hallazgo relevante: para series con tendencia fuerte y pocas observaciones, un modelo estadístico especializado puede superar a enfoques de ML genéricos.
 
 <table>
 <tr>
@@ -61,7 +81,16 @@ Descomposición estacional (STL), tests de estacionariedad (ADF/KPSS), y modelo 
 
 ## 🗄️ 3. SQL — Validación y Consultas
 
-Consultas de agregación y JOIN sobre los datasets limpios, usadas para validar de forma cruzada los hallazgos del EDA en Python.
+**Qué se hizo:**
+- Consultas de conteo y verificación de integridad sobre ambas tablas (`patent_level`, `quarterly_level`).
+- Agregaciones con `GROUP BY` (total de patentes y promedio de `keyword_score` por `tech_era`).
+- Un `JOIN` entre ambas tablas para cruzar tipo de patente con era tecnológica.
+
+**Qué se concluyó:**
+- Todos los totales agregados en SQL **coinciden exactamente** con los del EDA en Python (30,118 patentes, mismos totales por era), validando que la separación de datos no perdió ni duplicó información.
+- El pico histórico de innovación (**2014 Q3, 525 patentes**) se confirmó de forma cruzada entre Python, R y SQL.
+- Esta etapa **corrigió un error propio**: la escala del `keyword_score` reportada inicialmente en la interpretación del boxplot de Python (leída como 0-10) en realidad es **0-1** (0.42 a 0.67 entre eras) — el cálculo exacto de SQL detectó y corrigió esta lectura visual imprecisa.
+- La dominancia de patentes tipo "utility" (~99%) es **constante en todas las eras tecnológicas**, no un efecto de un período específico.
 
 <p align="center">
 <img src="screenshots/sql/11_join_tech_era_patent_type.png" width="500"/>
@@ -70,7 +99,13 @@ Consultas de agregación y JOIN sobre los datasets limpios, usadas para validar 
 
 ## 📊 4. Excel — Tablas Dinámicas
 
-Vista ejecutiva rápida mediante tablas dinámicas, validando los mismos totales obtenidos en SQL y Python.
+**Qué se hizo:**
+- Importación del dataset trimestral, con corrección de un problema de configuración regional (Excel interpretaba el separador decimal en punto de los datos de Python como separador de miles).
+- Dos tablas dinámicas: total de `patent_count` por `tech_era`, y promedio de `avg_keyword_score` por `tech_era`.
+
+**Qué se concluyó:**
+- Ambas tablas dinámicas **replican exactamente** los valores ya validados en SQL y Python, agregando una tercera confirmación cruzada independiente.
+- El ejercicio evidenció un problema técnico real y común al trabajar con datos generados en Python e importados a Excel en configuraciones regionales distintas (punto vs. coma decimal), resuelto ajustando el tipo de columna vía Power Query con configuración regional explícita ("Inglés Estados Unidos").
 
 <table>
 <tr>
@@ -85,7 +120,14 @@ Vista ejecutiva rápida mediante tablas dinámicas, validando los mismos totales
 
 ## 📉 5. Power BI — Dashboard de Tendencias Tecnológicas
 
-Dashboard interactivo con filtros dinámicos (era tecnológica, rango de años), mostrando la evolución de patentes y tecnologías clave.
+**Qué se hizo:**
+- Modelo de datos con relación entre `patent_level` y `quarterly_level` (clave compuesta `year` + `quarter`).
+- Dashboard con 4 visuales: evolución histórica de `patent_count`, evolución de keywords tecnológicos (5G/AI/ML/IoT/Cloud), KPIs (total de patentes y score promedio), y barras por `tech_era`.
+- Dos segmentaciones de datos (slicers) interactivas: por `tech_era` y por rango de `year`.
+
+**Qué se concluyó:**
+- El dashboard permite **explorar interactivamente** los mismos hallazgos del EDA de Python (los dos booms, el despegue de AI/ML) filtrando dinámicamente por era o año, algo que un notebook estático no ofrece.
+- Se validó que la interactividad entre visuales funciona correctamente: al filtrar por una `tech_era`, todos los gráficos (incluyendo los KPIs) se actualizan en conjunto.
 
 <p align="center">
 <img src="screenshots/powerbi/14_dashboard_completo.png" width="700"/>
@@ -93,7 +135,14 @@ Dashboard interactivo con filtros dinámicos (era tecnológica, rango de años),
 
 ## 🔮 6. Tableau — Dashboard de Forecasting
 
-Dashboard con pronóstico nativo de Tableau, comparado contra el modelo ARIMA de R, junto con KPIs clave y filtro interactivo por era tecnológica.
+**Qué se hizo:**
+- Conexión y relación entre ambas tablas (con corrección de separador de campo CSV y configuración regional, replicando problemas similares a los de Excel/Power BI).
+- Gráfico de evolución histórica con el **pronóstico nativo de Tableau** (suavizado exponencial) activado sobre la serie completa 1976-2025.
+- Dos KPIs (total de patentes, score promedio de keywords) y filtro interactivo por `tech_era`.
+
+**Qué se concluyó:**
+- El pronóstico nativo de Tableau proyecta una **tendencia más agresiva y creciente** hacia 2033, en contraste con la proyección más conservadora y estable del ARIMA de R (~400-415/trimestre).
+- Esta diferencia es un **hallazgo válido en sí mismo**: dos métodos de forecasting distintos (suavizado exponencial vs. ARIMA) llevan a conclusiones diferentes sobre el futuro, ilustrando que ningún método de pronóstico es una "verdad absoluta" y que la elección de metodología importa tanto como los datos mismos.
 
 <p align="center">
 <img src="screenshots/tableau/15_dashboard_forecasting.png" width="700"/>
@@ -101,17 +150,14 @@ Dashboard con pronóstico nativo de Tableau, comparado contra el modelo ARIMA de
 
 ---
 
-## 📊 Hallazgos principales
+## 📊 Hallazgos principales del proyecto
 
-1. **Dos ciclos de innovación**: la actividad de patentamiento no fue lineal. Se identifican dos "booms" (≈2000 y ≈2012-2025) separados por un período de estancamiento (2004-2010), coincidiendo con las revoluciones de 2G/3G y 4G/5G/smartphones respectivamente.
-
-2. **Sin estacionalidad relevante**: los 4 trimestres del año muestran actividad de patentamiento similar; no existe un patrón estacional fuerte, confirmado tanto visualmente (Python) como estadísticamente (descomposición STL en R).
-
-3. **Explosión tecnológica reciente**: Cloud/Edge lideró la adopción temprana (~2000), mientras que 5G, AI/ML e IoT explotaron después de 2020, coincidiendo con la era `modern_2020s`.
-
-4. **ARIMA superó a los modelos de ML genéricos**: el modelo ARIMA(0,1,1) con drift (ajustado en R) obtuvo mejor desempeño (RMSE=29.05) que Ridge y Random Forest entrenados en Python, incluso después de resolver un problema de extrapolación fuera de rango reformulando el target como "cambio" en vez de "nivel absoluto".
-
-5. **Validación cruzada exitosa**: los totales agregados (30,118 patentes, distribución por `tech_era`, promedio de `keyword_score`) coinciden exactamente entre Python, SQL, Excel y Power BI, confirmando la integridad del pipeline de datos.
+1. **Dos ciclos de innovación**: la actividad de patentamiento no fue lineal. Se identifican dos "booms" (≈2000 y ≈2012-2025) separados por un período de estancamiento (2004-2010).
+2. **Sin estacionalidad relevante**: confirmado de forma consistente en Python (visual) y R (estadística formal, STL y ARIMA sin componente estacional).
+3. **Explosión tecnológica reciente**: Cloud/Edge lideró la adopción temprana; 5G, AI/ML e IoT explotaron después de 2020.
+4. **ARIMA superó a los modelos de ML genéricos**: el modelo ARIMA(0,1,1) con drift (R) tuvo mejor desempeño (RMSE=29.05) que Ridge y Random Forest (Python), incluso tras corregir un problema de extrapolación reformulando el target.
+5. **Validación cruzada exitosa**: los totales agregados coinciden exactamente entre Python, SQL, Excel y Power BI, confirmando la integridad del pipeline de datos — y en el proceso se detectó y corrigió un error propio de interpretación de escala.
+6. **El método de forecasting importa**: Tableau (suavizado exponencial) y R (ARIMA) proyectan futuros distintos para la misma serie, evidenciando que la elección de metodología estadística afecta directamente las conclusiones de negocio.
 
 ## 🛠️ Herramientas y rol de cada una
 
