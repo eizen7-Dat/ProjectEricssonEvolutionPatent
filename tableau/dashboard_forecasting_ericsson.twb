@@ -1,0 +1,1748 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='0805cf1a3a0534e9a0b65b6b586e7c312cc0fee2646a1a035f9c71e91ed69061' _.fcp.WorkbookFingerprinting.true...creator-author-id='0805cf1a3a0534e9a0b65b6b586e7c312cc0fee2646a1a035f9c71e91ed69061' _.fcp.WorkbookFingerprinting.true...creator-license-type='free' _.fcp.WorkbookFingerprinting.true...creator-machine-id='bb8a6c00fefc1fc742b8e6b67dc5d933363329eb70eae04e66294996422fad14' _.fcp.WorkbookFingerprinting.true...license-type='free' _.fcp.WorkbookFingerprinting.true...machine-id='bb8a6c00fefc1fc742b8e6b67dc5d933363329eb70eae04e66294996422fad14' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='quarterly_level_clean+' inline='true' name='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='quarterly_level_clean' name='textscan.0nsq5zh0ye0ytz13oq69x1xnyo91'>
+            <connection class='textscan' directory='C:/Users/Pc/Documents/ProjectEricssonEvolutionPatent/data/processed' filename='quarterly_level_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0nsq5zh0ye0ytz13oq69x1xnyo91' name='quarterly_level_clean.csv' table='[quarterly_level_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='day_of_week' ordinal='0' />
+              <column datatype='date' name='quarter_end' ordinal='1' />
+              <column datatype='string' name='tech_era' ordinal='2' />
+              <column datatype='integer' name='patent_count' ordinal='3' />
+              <column datatype='integer' name='patent_unique' ordinal='4' />
+              <column datatype='real' name='utility_share' ordinal='5' />
+              <column datatype='real' name='design_share' ordinal='6' />
+              <column datatype='real' name='avg_title_words' ordinal='7' />
+              <column datatype='real' name='avg_keyword_score' ordinal='8' />
+              <column datatype='integer' name='kw_5g_count' ordinal='9' />
+              <column datatype='integer' name='kw_ai_ml_count' ordinal='10' />
+              <column datatype='integer' name='kw_cloud_edge_count' ordinal='11' />
+              <column datatype='integer' name='kw_security_count' ordinal='12' />
+              <column datatype='integer' name='kw_iot_count' ordinal='13' />
+              <column datatype='integer' name='kw_network_count' ordinal='14' />
+              <column datatype='integer' name='kw_energy_count' ordinal='15' />
+              <column datatype='integer' name='kw_antenna_count' ordinal='16' />
+              <column datatype='integer' name='kw_data_count' ordinal='17' />
+              <column datatype='real' name='patent_count_lag1' ordinal='18' />
+              <column datatype='real' name='patent_count_lag2' ordinal='19' />
+              <column datatype='real' name='patent_count_lag4' ordinal='20' />
+              <column datatype='real' name='patent_count_roll4_mean' ordinal='21' />
+              <column datatype='real' name='patent_count_roll8_mean' ordinal='22' />
+              <column datatype='real' name='patent_count_qoq' ordinal='23' />
+              <column datatype='real' name='patent_count_yoy' ordinal='24' />
+              <column datatype='integer' name='target_patent_count_current' ordinal='25' />
+              <column datatype='real' name='target_patent_count_next_quarter' ordinal='26' />
+              <column datatype='integer' name='years_since_first_patent' ordinal='27' />
+              <column datatype='integer' name='year_patent_count' ordinal='28' />
+              <column datatype='integer' name='year' ordinal='29' />
+              <column datatype='integer' name='quarter' ordinal='30' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0nsq5zh0ye0ytz13oq69x1xnyo91' name='patent_level_clean.csv' table='[patent_level_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='patent_id' ordinal='0' />
+              <column datatype='string' name='patent_type' ordinal='1' />
+              <column datatype='date' name='patent_date' ordinal='2' />
+              <column datatype='string' name='patent_title' ordinal='3' />
+              <column datatype='integer' name='month' ordinal='4' />
+              <column datatype='integer' name='day_of_year' ordinal='5' />
+              <column datatype='integer' name='title_len_chars' ordinal='6' />
+              <column datatype='integer' name='title_len_words' ordinal='7' />
+              <column datatype='integer' name='title_has_number' ordinal='8' />
+              <column datatype='integer' name='title_has_acronym' ordinal='9' />
+              <column datatype='integer' name='kw_5g' ordinal='10' />
+              <column datatype='integer' name='kw_ai_ml' ordinal='11' />
+              <column datatype='integer' name='kw_cloud_edge' ordinal='12' />
+              <column datatype='integer' name='kw_security' ordinal='13' />
+              <column datatype='integer' name='kw_iot' ordinal='14' />
+              <column datatype='integer' name='kw_network' ordinal='15' />
+              <column datatype='integer' name='kw_energy' ordinal='16' />
+              <column datatype='integer' name='kw_antenna' ordinal='17' />
+              <column datatype='integer' name='kw_data' ordinal='18' />
+              <column datatype='integer' name='keyword_score' ordinal='19' />
+              <column datatype='integer' name='is_utility' ordinal='20' />
+              <column datatype='integer' name='is_design' ordinal='21' />
+              <column datatype='integer' name='is_other_type' ordinal='22' />
+              <column datatype='integer' name='patent_seq_global' ordinal='23' />
+              <column datatype='integer' name='year' ordinal='24' />
+              <column datatype='integer' name='quarter' ordinal='25' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[avg_keyword_score]' value='[quarterly_level_clean.csv].[avg_keyword_score]' />
+          <map key='[avg_title_words]' value='[quarterly_level_clean.csv].[avg_title_words]' />
+          <map key='[day_of_week]' value='[quarterly_level_clean.csv].[day_of_week]' />
+          <map key='[day_of_year]' value='[patent_level_clean.csv].[day_of_year]' />
+          <map key='[design_share]' value='[quarterly_level_clean.csv].[design_share]' />
+          <map key='[is_design]' value='[patent_level_clean.csv].[is_design]' />
+          <map key='[is_other_type]' value='[patent_level_clean.csv].[is_other_type]' />
+          <map key='[is_utility]' value='[patent_level_clean.csv].[is_utility]' />
+          <map key='[keyword_score]' value='[patent_level_clean.csv].[keyword_score]' />
+          <map key='[kw_5g]' value='[patent_level_clean.csv].[kw_5g]' />
+          <map key='[kw_5g_count]' value='[quarterly_level_clean.csv].[kw_5g_count]' />
+          <map key='[kw_ai_ml]' value='[patent_level_clean.csv].[kw_ai_ml]' />
+          <map key='[kw_ai_ml_count]' value='[quarterly_level_clean.csv].[kw_ai_ml_count]' />
+          <map key='[kw_antenna]' value='[patent_level_clean.csv].[kw_antenna]' />
+          <map key='[kw_antenna_count]' value='[quarterly_level_clean.csv].[kw_antenna_count]' />
+          <map key='[kw_cloud_edge]' value='[patent_level_clean.csv].[kw_cloud_edge]' />
+          <map key='[kw_cloud_edge_count]' value='[quarterly_level_clean.csv].[kw_cloud_edge_count]' />
+          <map key='[kw_data]' value='[patent_level_clean.csv].[kw_data]' />
+          <map key='[kw_data_count]' value='[quarterly_level_clean.csv].[kw_data_count]' />
+          <map key='[kw_energy]' value='[patent_level_clean.csv].[kw_energy]' />
+          <map key='[kw_energy_count]' value='[quarterly_level_clean.csv].[kw_energy_count]' />
+          <map key='[kw_iot]' value='[patent_level_clean.csv].[kw_iot]' />
+          <map key='[kw_iot_count]' value='[quarterly_level_clean.csv].[kw_iot_count]' />
+          <map key='[kw_network]' value='[patent_level_clean.csv].[kw_network]' />
+          <map key='[kw_network_count]' value='[quarterly_level_clean.csv].[kw_network_count]' />
+          <map key='[kw_security]' value='[patent_level_clean.csv].[kw_security]' />
+          <map key='[kw_security_count]' value='[quarterly_level_clean.csv].[kw_security_count]' />
+          <map key='[month]' value='[patent_level_clean.csv].[month]' />
+          <map key='[patent_count]' value='[quarterly_level_clean.csv].[patent_count]' />
+          <map key='[patent_count_lag1]' value='[quarterly_level_clean.csv].[patent_count_lag1]' />
+          <map key='[patent_count_lag2]' value='[quarterly_level_clean.csv].[patent_count_lag2]' />
+          <map key='[patent_count_lag4]' value='[quarterly_level_clean.csv].[patent_count_lag4]' />
+          <map key='[patent_count_qoq]' value='[quarterly_level_clean.csv].[patent_count_qoq]' />
+          <map key='[patent_count_roll4_mean]' value='[quarterly_level_clean.csv].[patent_count_roll4_mean]' />
+          <map key='[patent_count_roll8_mean]' value='[quarterly_level_clean.csv].[patent_count_roll8_mean]' />
+          <map key='[patent_count_yoy]' value='[quarterly_level_clean.csv].[patent_count_yoy]' />
+          <map key='[patent_date]' value='[patent_level_clean.csv].[patent_date]' />
+          <map key='[patent_id]' value='[patent_level_clean.csv].[patent_id]' />
+          <map key='[patent_seq_global]' value='[patent_level_clean.csv].[patent_seq_global]' />
+          <map key='[patent_title]' value='[patent_level_clean.csv].[patent_title]' />
+          <map key='[patent_type]' value='[patent_level_clean.csv].[patent_type]' />
+          <map key='[patent_unique]' value='[quarterly_level_clean.csv].[patent_unique]' />
+          <map key='[quarter (patent_level_clean.csv)]' value='[patent_level_clean.csv].[quarter]' />
+          <map key='[quarter]' value='[quarterly_level_clean.csv].[quarter]' />
+          <map key='[quarter_end]' value='[quarterly_level_clean.csv].[quarter_end]' />
+          <map key='[target_patent_count_current]' value='[quarterly_level_clean.csv].[target_patent_count_current]' />
+          <map key='[target_patent_count_next_quarter]' value='[quarterly_level_clean.csv].[target_patent_count_next_quarter]' />
+          <map key='[tech_era]' value='[quarterly_level_clean.csv].[tech_era]' />
+          <map key='[title_has_acronym]' value='[patent_level_clean.csv].[title_has_acronym]' />
+          <map key='[title_has_number]' value='[patent_level_clean.csv].[title_has_number]' />
+          <map key='[title_len_chars]' value='[patent_level_clean.csv].[title_len_chars]' />
+          <map key='[title_len_words]' value='[patent_level_clean.csv].[title_len_words]' />
+          <map key='[utility_share]' value='[quarterly_level_clean.csv].[utility_share]' />
+          <map key='[year (patent_level_clean.csv)]' value='[patent_level_clean.csv].[year]' />
+          <map key='[year]' value='[quarterly_level_clean.csv].[year]' />
+          <map key='[year_patent_count]' value='[quarterly_level_clean.csv].[year_patent_count]' />
+          <map key='[years_since_first_patent]' value='[quarterly_level_clean.csv].[years_since_first_patent]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_week</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day_of_week]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>day_of_week</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter_end</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[quarter_end]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>quarter_end</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tech_era</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tech_era]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>tech_era</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[patent_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_unique</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[patent_unique]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_unique</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>utility_share</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[utility_share]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>utility_share</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>design_share</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[design_share]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>design_share</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_title_words</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_title_words]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>avg_title_words</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_keyword_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_keyword_score]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>avg_keyword_score</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_5g_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_5g_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_5g_count</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_ai_ml_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_ai_ml_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_ai_ml_count</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_cloud_edge_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_cloud_edge_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_cloud_edge_count</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_security_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_security_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_security_count</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_iot_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_iot_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_iot_count</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_network_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_network_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_network_count</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_energy_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_energy_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_energy_count</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_antenna_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_antenna_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_antenna_count</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_data_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_data_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>kw_data_count</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_lag1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_lag1]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_lag1</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_lag2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_lag2]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_lag2</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_lag4</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_lag4]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_lag4</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_roll4_mean</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_roll4_mean]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_roll4_mean</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_roll8_mean</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_roll8_mean]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_roll8_mean</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_qoq</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_qoq]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_qoq</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_count_yoy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[patent_count_yoy]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>patent_count_yoy</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target_patent_count_current</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[target_patent_count_current]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>target_patent_count_current</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target_patent_count_next_quarter</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[target_patent_count_next_quarter]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>target_patent_count_next_quarter</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years_since_first_patent</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[years_since_first_patent]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>years_since_first_patent</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year_patent_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year_patent_count]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>year_patent_count</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quarter]</local-name>
+            <parent-name>[quarterly_level_clean.csv]</parent-name>
+            <remote-alias>quarter</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[patent_id]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>patent_id</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[patent_type]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>patent_type</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[patent_date]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>patent_date</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[patent_title]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>patent_title</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_of_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day_of_year]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>day_of_year</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title_len_chars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[title_len_chars]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>title_len_chars</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title_len_words</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[title_len_words]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>title_len_words</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title_has_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[title_has_number]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>title_has_number</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title_has_acronym</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[title_has_acronym]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>title_has_acronym</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_5g</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_5g]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_5g</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_ai_ml</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_ai_ml]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_ai_ml</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_cloud_edge</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_cloud_edge]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_cloud_edge</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_security</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_security]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_security</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_iot</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_iot]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_iot</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_network</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_network]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_network</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_energy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_energy]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_energy</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_antenna</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_antenna]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_antenna</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kw_data</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kw_data]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>kw_data</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>keyword_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[keyword_score]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>keyword_score</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_utility</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_utility]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>is_utility</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_design</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_design]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>is_design</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_other_type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_other_type]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>is_other_type</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>patent_seq_global</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[patent_seq_global]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>patent_seq_global</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year (patent_level_clean.csv)]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quarter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quarter (patent_level_clean.csv)]</local-name>
+            <parent-name>[patent_level_clean.csv]</parent-name>
+            <remote-alias>quarter</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='patent_level_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411]' role='measure' type='quantitative' />
+      <column caption='quarterly_level_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D]' role='measure' type='quantitative' />
+      <column caption='Day Of Year' datatype='integer' name='[day_of_year]' role='dimension' type='quantitative' />
+      <column caption='Is Design' datatype='integer' name='[is_design]' role='measure' type='quantitative' />
+      <column caption='Is Other Type' datatype='integer' name='[is_other_type]' role='measure' type='quantitative' />
+      <column caption='Is Utility' datatype='integer' name='[is_utility]' role='measure' type='quantitative' />
+      <column caption='Keyword Score' datatype='integer' name='[keyword_score]' role='measure' type='quantitative' />
+      <column caption='Kw 5G' datatype='integer' name='[kw_5g]' role='measure' type='quantitative' />
+      <column caption='Kw Ai Ml' datatype='integer' name='[kw_ai_ml]' role='measure' type='quantitative' />
+      <column caption='Kw Antenna' datatype='integer' name='[kw_antenna]' role='measure' type='quantitative' />
+      <column caption='Kw Cloud Edge' datatype='integer' name='[kw_cloud_edge]' role='measure' type='quantitative' />
+      <column caption='Kw Data' datatype='integer' name='[kw_data]' role='measure' type='quantitative' />
+      <column caption='Kw Energy' datatype='integer' name='[kw_energy]' role='measure' type='quantitative' />
+      <column caption='Kw Iot' datatype='integer' name='[kw_iot]' role='measure' type='quantitative' />
+      <column caption='Kw Network' datatype='integer' name='[kw_network]' role='measure' type='quantitative' />
+      <column caption='Kw Security' datatype='integer' name='[kw_security]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Patent Date' datatype='date' name='[patent_date]' role='dimension' type='ordinal' />
+      <column caption='Patent Id' datatype='string' name='[patent_id]' role='dimension' type='nominal' />
+      <column caption='Patent Seq Global' datatype='integer' name='[patent_seq_global]' role='measure' type='quantitative' />
+      <column caption='Patent Title' datatype='string' name='[patent_title]' role='dimension' type='nominal' />
+      <column caption='Patent Type' datatype='string' name='[patent_type]' role='dimension' type='nominal' />
+      <column caption='Quarter (Patent Level Clean.Csv)' datatype='integer' name='[quarter (patent_level_clean.csv)]' role='dimension' type='quantitative' />
+      <column caption='Title Has Acronym' datatype='integer' name='[title_has_acronym]' role='measure' type='quantitative' />
+      <column caption='Title Has Number' datatype='integer' name='[title_has_number]' role='dimension' type='ordinal' />
+      <column caption='Title Len Chars' datatype='integer' name='[title_len_chars]' role='measure' type='quantitative' />
+      <column caption='Title Len Words' datatype='integer' name='[title_len_words]' role='measure' type='quantitative' />
+      <column caption='Year (Patent Level Clean.Csv)' datatype='integer' name='[year (patent_level_clean.csv)]' role='dimension' type='quantitative' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Forecast Indicator:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Real&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Estimación&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Perú&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Real&quot;</bucket>
+            <bucket>&quot;Estimación&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <object-graph>
+        <objects>
+          <object caption='patent_level_clean.csv' id='patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411'>
+            <properties context=''>
+              <relation connection='textscan.0nsq5zh0ye0ytz13oq69x1xnyo91' name='patent_level_clean.csv' table='[patent_level_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='patent_id' ordinal='0' />
+                  <column datatype='string' name='patent_type' ordinal='1' />
+                  <column datatype='date' name='patent_date' ordinal='2' />
+                  <column datatype='string' name='patent_title' ordinal='3' />
+                  <column datatype='integer' name='month' ordinal='4' />
+                  <column datatype='integer' name='day_of_year' ordinal='5' />
+                  <column datatype='integer' name='title_len_chars' ordinal='6' />
+                  <column datatype='integer' name='title_len_words' ordinal='7' />
+                  <column datatype='integer' name='title_has_number' ordinal='8' />
+                  <column datatype='integer' name='title_has_acronym' ordinal='9' />
+                  <column datatype='integer' name='kw_5g' ordinal='10' />
+                  <column datatype='integer' name='kw_ai_ml' ordinal='11' />
+                  <column datatype='integer' name='kw_cloud_edge' ordinal='12' />
+                  <column datatype='integer' name='kw_security' ordinal='13' />
+                  <column datatype='integer' name='kw_iot' ordinal='14' />
+                  <column datatype='integer' name='kw_network' ordinal='15' />
+                  <column datatype='integer' name='kw_energy' ordinal='16' />
+                  <column datatype='integer' name='kw_antenna' ordinal='17' />
+                  <column datatype='integer' name='kw_data' ordinal='18' />
+                  <column datatype='integer' name='keyword_score' ordinal='19' />
+                  <column datatype='integer' name='is_utility' ordinal='20' />
+                  <column datatype='integer' name='is_design' ordinal='21' />
+                  <column datatype='integer' name='is_other_type' ordinal='22' />
+                  <column datatype='integer' name='patent_seq_global' ordinal='23' />
+                  <column datatype='integer' name='year' ordinal='24' />
+                  <column datatype='integer' name='quarter' ordinal='25' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='quarterly_level_clean.csv' id='quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D'>
+            <properties context=''>
+              <relation connection='textscan.0nsq5zh0ye0ytz13oq69x1xnyo91' name='quarterly_level_clean.csv' table='[quarterly_level_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='day_of_week' ordinal='0' />
+                  <column datatype='date' name='quarter_end' ordinal='1' />
+                  <column datatype='string' name='tech_era' ordinal='2' />
+                  <column datatype='integer' name='patent_count' ordinal='3' />
+                  <column datatype='integer' name='patent_unique' ordinal='4' />
+                  <column datatype='real' name='utility_share' ordinal='5' />
+                  <column datatype='real' name='design_share' ordinal='6' />
+                  <column datatype='real' name='avg_title_words' ordinal='7' />
+                  <column datatype='real' name='avg_keyword_score' ordinal='8' />
+                  <column datatype='integer' name='kw_5g_count' ordinal='9' />
+                  <column datatype='integer' name='kw_ai_ml_count' ordinal='10' />
+                  <column datatype='integer' name='kw_cloud_edge_count' ordinal='11' />
+                  <column datatype='integer' name='kw_security_count' ordinal='12' />
+                  <column datatype='integer' name='kw_iot_count' ordinal='13' />
+                  <column datatype='integer' name='kw_network_count' ordinal='14' />
+                  <column datatype='integer' name='kw_energy_count' ordinal='15' />
+                  <column datatype='integer' name='kw_antenna_count' ordinal='16' />
+                  <column datatype='integer' name='kw_data_count' ordinal='17' />
+                  <column datatype='real' name='patent_count_lag1' ordinal='18' />
+                  <column datatype='real' name='patent_count_lag2' ordinal='19' />
+                  <column datatype='real' name='patent_count_lag4' ordinal='20' />
+                  <column datatype='real' name='patent_count_roll4_mean' ordinal='21' />
+                  <column datatype='real' name='patent_count_roll8_mean' ordinal='22' />
+                  <column datatype='real' name='patent_count_qoq' ordinal='23' />
+                  <column datatype='real' name='patent_count_yoy' ordinal='24' />
+                  <column datatype='integer' name='target_patent_count_current' ordinal='25' />
+                  <column datatype='real' name='target_patent_count_next_quarter' ordinal='26' />
+                  <column datatype='integer' name='years_since_first_patent' ordinal='27' />
+                  <column datatype='integer' name='year_patent_count' ordinal='28' />
+                  <column datatype='integer' name='year' ordinal='29' />
+                  <column datatype='integer' name='quarter' ordinal='30' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[year]' />
+                <expression op='[year (patent_level_clean.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[quarter]' />
+                <expression op='[quarter (patent_level_clean.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='quarterly_level_clean.csv_C74A81A8391B420697F90A148308D81D' />
+            <second-end-point object-id='patent_level_clean.csv_C132C9D900BB49578EB32DC9FCF01411' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='01_Evolucion_Historica'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>Evolucion Historica</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='quarterly_level_clean+' name='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp'>
+            <column-instance column='[patent_count]' derivation='Sum' forecast-column-base='[sum:patent_count:qk]' forecast-column-type='forecast-value' name='[fVal:sum:patent_count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+            <column-instance column='[tech_era]' derivation='None' name='[none:tech_era:nk]' pivot='key' type='nominal' />
+            <column datatype='integer' name='[patent_count]' role='measure' type='quantitative' />
+            <column datatype='date' name='[quarter_end]' role='dimension' type='ordinal' />
+            <column-instance column='[patent_count]' derivation='Sum' name='[sum:patent_count:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[tech_era]' role='dimension' type='nominal' />
+            <column-instance column='[quarter_end]' derivation='Year' name='[yr:quarter_end:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:tech_era:nk]'>
+            <groupfilter function='level-members' level='[none:tech_era:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:tech_era:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:Forecast Indicator:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[fVal:sum:patent_count:qk]</rows>
+        <cols>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[yr:quarter_end:ok]</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{BD39742C-72CF-4B3E-BBCB-7FC9EEBC9150}' />
+    </worksheet>
+    <worksheet name='Primer KPI (patent_count total)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='9'>Total Patentes (1976-2025)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='quarterly_level_clean+' name='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp'>
+            <column datatype='integer' name='[patent_count]' role='measure' type='quantitative' />
+            <column-instance column='[patent_count]' derivation='Sum' name='[sum:patent_count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[sum:patent_count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{E7AEC786-1A14-4D0C-9154-6F8E49894570}' />
+    </worksheet>
+    <worksheet name='Segundo KPI (avg_keyword_score promedio):'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='8'>Score Prom. Keywords</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='quarterly_level_clean+' name='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp'>
+            <column-instance column='[avg_keyword_score]' derivation='Avg' name='[avg:avg_keyword_score:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[avg_keyword_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[avg:avg_keyword_score:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{44D7C762-3A28-47CE-A0FE-B9C929FC6D02}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='quarterly_level_clean+' name='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp'>
+        <column-instance column='[tech_era]' derivation='None' name='[none:tech_era:nk]' pivot='key' type='nominal' />
+        <column datatype='string' name='[tech_era]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='85500' x='800' y='1000'>
+              <zone h='98000' id='3' name='01_Evolucion_Historica' w='85500' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='129' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='12900' x='86300' y='1000'>
+              <zone h='8250' id='8' name='01_Evolucion_Historica' pane-specification-id='0' param='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:Forecast Indicator:nk]' type-v2='color' w='12900' x='86300' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='184' h='24000' id='9' is-fixed='true' name='01_Evolucion_Historica' param='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:tech_era:nk]' type-v2='filter' values='database' w='12900' x='86300' y='9250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='156' h='20500' id='10' is-fixed='true' name='Primer KPI (patent_count total)' w='12900' x='86300' y='33250'>
+                <layout-cache fixed-size-w='60' type-h='fixed' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='10625' id='11' name='Segundo KPI (avg_keyword_score promedio):' w='12900' x='86300' y='53750'>
+                <layout-cache fixed-size-h='77' fixed-size-w='60' type-h='fixed' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='12' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='184' h='24000' id='9' mode='checkdropdown' name='01_Evolucion_Historica' param='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:tech_era:nk]' type-v2='filter' values='database' w='12900' x='86300' y='9250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='01_Evolucion_Historica' w='85500' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8250' id='8' name='01_Evolucion_Historica' pane-specification-id='0' param='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:Forecast Indicator:nk]' type-v2='color' w='12900' x='86300' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='156' h='20500' id='10' is-fixed='true' name='Primer KPI (patent_count total)' w='12900' x='86300' y='33250'>
+                  <layout-cache fixed-size-w='60' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='77' h='10625' id='11' is-fixed='true' name='Segundo KPI (avg_keyword_score promedio):' w='12900' x='86300' y='53750'>
+                  <layout-cache fixed-size-h='77' fixed-size-w='60' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{218D297B-449A-4261-9C40-5E7DC184FC1F}' />
+    </dashboard>
+  </dashboards>
+  <windows show-side-pane='false' source-height='30'>
+    <window class='worksheet' name='Primer KPI (patent_count total)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:avg_keyword_score:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{80CB5A32-28A1-49EE-96A3-1A3A36F4C151}' />
+    </window>
+    <window class='worksheet' name='Segundo KPI (avg_keyword_score promedio):'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:avg_keyword_score:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7275ABE8-1B32-452D-AB7C-55EC86FB207E}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='01_Evolucion_Historica'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <node-selection select-tuples='false'>
+              <oriented-node-reference orientation='vertical'>
+                <node-reference>
+                  <axis>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[fVal:sum:patent_count:qk]</axis>
+                </node-reference>
+                <page-reference />
+              </oriented-node-reference>
+            </node-selection>
+          </selection-collection>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='Primer KPI (patent_count total)' />
+        <viewpoint name='Segundo KPI (avg_keyword_score promedio):' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{75534712-56F9-49FD-AC0E-F5B986BE18E0}' />
+    </window>
+    <window class='worksheet' name='01_Evolucion_Historica'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card pane-specification-id='0' param='[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:Forecast Indicator:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[none:tech_era:nk]</field>
+            <field>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[yr:Calculation_0650135232602112:ok]</field>
+            <field>[federated.0sv1n1w1bq6sza1a9i2vb0dd4ffp].[yr:quarter_end:ok]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+        <default-map-tool-selection tool='16' />
+      </viewpoint>
+      <simple-id uuid='{3496F830-ED61-41C9-A458-BFF88651D56D}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='01_Evolucion_Historica' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAcJUlEQVR4nO3d2W8kR4Lf8W+elXUX7+LRbLKbfaolzWjG493xrj0LY18MYw3YhgdYw8Bi
+      FjsP/ivmL/D7woAfbMCGsbLHBwzvwJiFDRtYrzWSuqW+eV9Vxapi3VmVd/ih2GwWSalbq26y
+      oYwPQJBqpiIjsuKXEZFZrFSEEAJJiin1sisgSZdJBkCKNRkAKdZkAKRYkwGQYk0GQIo1GQAp
+      1mQApFiTAZBiTQZAijUZACnWLjUAQRAQRdFlVkGKOTkCSLEmAyDFmgyAFGsyAFKsyQBIsSYD
+      IMWaDIAUazIAUqzJAEixJgMgxZoMgBRrMgBSrMkASLEmAyDFmgyAFGsyAFKsyQBIsSYDIMWa
+      DIAUazIAUqzJAEixJgMgxZoMgBRrMgBSrMkASLEmAyDF2rcPgBA4A5u+4yIAt9/FdjwAvIFN
+      rz/8d9/t07Ud5DNZpXeJ/m0LGHTq7NW7RG6XwuQspfIBuohYuHaFrfV9DC1kdnGJ3c1tTF0w
+      ceUOM4XEm6i7JH1ryrd9ULYQAiKXB589IJObIFOcJeFV2VltU7hzjfGwy+7WPvrCbRYSLrst
+      hxtX5wnD8PiDcRVFeSONkaRv6luPAKHT4bMv1rn3gx8x2N9gEEUYQYBmaARBRCgCFE0nCEIi
+      PQBFQ1EUdF0nDENUVZUBkC7Ntx4BDnef8WCtgpVKc/vmMlubu2iqws07N3j66BmKqrBy+zYb
+      jx8TaSrLN++RTw5zFwQBqqqiqnItLl2Obx2A04SIAAVFURBCIAD11M8vyABIl+1bT4FOUxT1
+      xM8Kyjk/S9K7Qp56pViTAZBiTQZAijUZACnWZACkWJMBkGJNBkCKNRkAKdZkAKRYkwGQYk0G
+      QIo1GQAp1mQApFiTAZBiTQZAijUZACnWZACkWJMBkGJNBkCKNRkAKdZkAKRYkwGQYk0GQIo1
+      GQAp1mQApFiTAZBiTQZAijUZACnW3kgAQqdLdxACATtrz3n6fI2+F9Esb7K2V0cAndouz7cP
+      5COSpHfKtw6AP+jw+Mu/YqfqInoH1MMMy1cX0QcVtrsGaa/C3t4uqwcBY2qL7UrnTdRbkt6I
+      b/3x6EYyx3t3Vnh6CEGo0TlY5Qu7zlw2w2Rxiqyvsbm+TX75PbK6S73ZJIoyx49ICsNQPiFG
+      ujRv9PkASnqCv/07MzTKz6jV+kRtl6TWJZnL0Wv3cbMOupE6fiiGfECGdNle3fOEwLZtAFzb
+      Jjg1iff6bVZ3OnidHdrtFl8+uE+prbPywV2S/SqVjsbyrTuMiQZ7DZer85Nvox2S9Nfyykck
+      2a0a//rj/8zv/+QnfPnrv+CjP/o5V9/QU07lCCBdtlf2vH67TqNeZ319nbEPfot58yKqJUkX
+      45UBmFy8ze99f4VSqcTWs3UGcr0qfYe81iL4oBPxj//wn5JQFIy3XSNJukCvHAEUYDoN/+nj
+      P+Pjj3+FfQGVkqSL8lqrTyuTwdA0HMd52/WRpAv1jR6U/b8+/vfc/IOfMvuGFsLyKpB02V69
+      BhCCT//3f2e11MENEvzgjT9aW5IuzytPvQLIppN0u10SuQIJeRVI+g55rbnHbx7v8s/++E9Y
+      6O+yI5cB0nfIawXgB3cW+Df/8k/ZNGdZtN52lSTp4rxWANpRhp/9/Of89kKebvS2qyRJF+e1
+      lrSl5w9whcLGpw/4ex/96G3XSZIuzGtcBhUMOg2erW1TKC5iaQHFmeIb2bm8DCpdtm90H0CI
+      iE8++YQf/ehvvpGdywBIl032PCnWXusPYja3twGobW6Tn51723WSpAvzykXw9hf/h3/xr/4D
+      d27dJNIn+Nmf/PQi6iVJF+KVAbj6we/wR//EpeUoQBr59+vSd8krAyCAx2vb/O7v/T6qYsi/
+      B5C+U17r7wHGhM2f//rX/MWv/y+DC6iUJF2U17oP0G8e8GyvyeTEGPNzxTd26UheBpUu26un
+      QAJ+9ee/QklnqD+B8A/+EUvy/UDSd8RrnXqzSZXN56s8KNtMvqGPRJGkd8ErRwAFSBZX+Nnf
+      +fvsPXxIP4CMXAlL3xGvdR/g3/3bP+Pu7dsMHJM//vHvXkS9JOlCvHIRLITg2dOH5PITgM70
+      3PQb+0BRuQiWLttr9eXn9/+SvboA1eAP//nPKMibYdJ3xGudetXkNLeWcritJh3vbVdJki7O
+      q+8DCEHnsMzq2gZhdp6/cXd55O0QQoS0ayWCZJGJtMLexnMGxjjXF6eobq3RitLcWJ6jsb9B
+      3TG4cW0RQxsWIKdA0mV7rU+F+C+//CWk8jz7n/+Dajj6+8AZ0GzscdDwsav79K1psmGdnY0t
+      DikwYdrsbW1S6icppkP2DlpvqSmS9M291hpAcTp8+tmnVHfW+eXH/5Gf/oN/yFhy+DsjmeHq
+      wixPD8F2I8bHUhh+hvLDJtPfnyblhRyUdshee4+U7lJptomivHxCjPROeK0p0NkNlONpUBT4
+      9OrPed6cYiXXY9c1yXo1FLPAoa8yqXcQappqD+YyHp5VZHm2AMgpkHT5Xt3zFAXlzNfLX0eh
+      Ty/IMJn2MScXmDQj9Nw8i9eWmM+oYE1xZWmZpUmD0MhxpVh4i82RpG/mG/1N8JsmRwDpssme
+      J8WaDIAUazIAUqzJAEixJgMgxZoMgBRrMgBSrMkASLEmAyDFmgyAFGsyAFKsyQBIsSYDIMWa
+      DIAUazIAUqzJAEixJgMgxZoMgBRrMgBSrMkASLEmAyDFmgyAFGsyAFKsyQBIsSYDIMWaDIAU
+      azIAUqzJAEixJgMgxdqbeuDjUNDhk988w8ykWVlZZvvJIwZY3Ll3m90nD+iFOjfvvk82IXMn
+      vRve6MejB40tflMS3F6cRu9VOTAnmBQtDkqHBBPLLCYdyj3BymIRIQRhGKKqqnxCjHRp3ugI
+      oGammUrssbP5lIRIk1wCNVDxXA/TUNEUlSB0EEIcf0VRJAMgXZo3GgDP7dOzHRzHYfLqHOuP
+      n1HTfa6s3OL54yf0LMHs9Q+PH4ghhJAPyJAu1RudAgkhiMIQVA1VARGFRKhow/8gFAqaqh4/
+      Ykk+IUa6bPIRSVKsyZ4nxZoMgBRrMgBSrMkASLEmAyDFmgyAFGsyAFKsyQBIsSYDIMWaDIAU
+      azIAUqzJAEixJgMgxZoMgBRrMgBSrMkASLEmAyDFmgyAFGsyAFKsyQBIsSYDIMWaDIAUa2/2
+      s0El6R0WRYKB61Nu9NgoNenYrgyA9N0WhhHlRo/NcpNPnpTYKDWpd/qMZSzSSfPiPhirU9ul
+      0je5cXWGF58EKj8YS3obgiDi4WaVz1bLPN6qUap3URSFlflxPrpZ5HsrRcZzSUxDu5gARIM6
+      n693Wcx72MYsS8XcUUVlAKTXE0UCPwzx/AjXD+j1Pdq2w369S73Vp9buU23Z1Jo2zZ5D2jKY
+      LqT56OYs95anubs0haEP+9nJD2O+kCmQ1+mRn5kkq7vUm00g98r/Jwwj/DDC9YLhdz/ADyI8
+      PyQSAj+IAIHnhwA4XoAQw+8JUyOfthjLWoxnk6ST5ttt4DvG80OavQGlWpe9WofNSoswEqQt
+      g7RlkjC04c9Jk7RlYBo6hq6iKgq6pqKqww6ia8N/e8EydTJJE9PQ3mh9gzAiCCIcP8APQrp9
+      j97Ao9bq0+wOaHQGVJo9urZLz/Fp9xxcPySVMMhnEuTTCcZzKe4sTvKT711lupBmfjLHZCGF
+      rn39yfVCAqAndXrVPm7WQTdSX7ndVrnFn/7XT2nbDkEYEUWCMIwII3H0FRGGAoEgioYDV3j0
+      3TJ1FAUSho7nhzheQDKhYyV0sskE02NpZsbSLM7kmSqkyGcspgtpMu9IOPqOT9t2aNsujc6A
+      ZndAx3Zp2S5CCHKpBPmMddx58xkLy9DJZxL4QcRWpcVmucVutc1WpYU98Om7PmNZi7mJLNlU
+      gvJhD9vxcL2QvuNjOx6246OpCqqqoHD0/ajPq4oyerbUVExdI2np5FMWYzmLQtoil04wnkuS
+      TZoEYYT3okN7AZ4/PIGFYYTrhwy8AMcbnsEdL6A38Bi4PpEQx6+564d4fkg2ZTKeSzKeTTJV
+      SPPe0hTj2STj+RQzY2kMXcUydRKG/sqO/lUuZg0gBNtrT+kFGjdu3cA8OsOcngLZjsd/+8tV
+      EoZOwtBIGBopyyRhDl90y9RJmgaqqmCZw+wmE+dn2HZ8qk2bUr1LpdGjdNil2rQ5aNovRxUv
+      ACBtmUzmU8MXMmuRz1qkreHZMWFomIaOZWhYCQPL0DBNHVN/8RHvw/25fnAcSoCBGxBGAtcP
+      6PRd7MGws/UGHvbgqPMNPFo9d/h7x8PQNRK6hq6rJE2DTNIgl7EQkcA+CkgUDTuKH0SEYvhd
+      VRRSlsFYxmJhOseNhQmWigWuz4195fE5aeAGRyPosPOFUQQMR5LgRJvsgUe1ZWMPfDq2Q6Pr
+      0O4NQ2s73vHJSFUUVAVUVcU0NHRNRddUEoaGZerHI0nSHJ6ghsHWj1/jyXyK8VySxKmR5m08
+      RyJ2nw7tBSEd22Xg+rRtl/5Rp6y3+3Rsl2bXodN3cb0Axw/w/JDwqNN5fogfhMdnKpSXATg9
+      XXjxwquqMhyJjqYZqaNgpS2TTNKgkLFIWSYTuSTppDHsGAmDbMpEO+e4+EGI6w/P4H4Q0nd9
+      NFVlMp8ikzJH6nCRXC/AC4bTUU1V0TQFQ9curT6v61ICEEURYRgSRdErO/+rtnlR/a87O7zO
+      foQQx2VEYjj1CkJBEEUIIQiCEIEynJZFEaePmqoqCBGhKsP9aEeBUBQwdA1dU1AA0/j6M/Jl
+      tPevW8br1PVVZ+2LKOPrynmnRgAhBK4zQDUSmPpw+PN9H8MwEFFEBGfOitFRB9U0DSEioggU
+      EeBF6vE06UUZw31EeJ6PqukYR/t48bwyXddBCMJwuOA2THP4cI9TZZxug66f2o8Q+EGAbhgo
+      xw8GUQiCAE3TUBTl+OEhIvSI0I8Xlmf2IwReEGAe/VsYHp1lNRUhhkEIAx+haMfz4NNliCik
+      P3BJppKoijLS3jAMUFWd033jZBlRGCIUlcBz0E3r3GMShcMRwDTM40X0yfYiBJ7nIRQV09CP
+      O+O5x1VEBCHoukoYhiiKgqqqiCgkiEDXNcTRo7UURTlRxvDEpaoqnutgJCxURRnpI8dCDw/j
+      cm+EHVcoctnabTCT8fhyr4+lCW7euo1lqMfbdNr7PH5YZurKPMtX59CODuCLg4AQ7Dx/RMsT
+      CFS00OfKrQ8oJLXjMqKgz8MHT/F9B18zmZ5f5trcBMBxCBuVLXZrA7KZBN1Wm8U7HzCW1F/W
+      VYR0uz1eTI23dvf58N7dkfbU9zcot2zMzDQ3ZzW2ahbXF7Ivz1LC58mXj3DCCFXXiITO+/fu
+      YmjKcRn9To3t3TqaFrFTrvPB93/IdCF94kwXsb1dZmkuy2cP1jEMnRt375E2Xx4zt1+j3k3i
+      HK4RGCkiNcWd6wsjdV17dB9XsZieW2RmPHvcMV+21+GLzx+CppJIpxm4Ch+9f3Nkm05tl41S
+      i367iZHJcOPOhxSS2kh7Vx89JjQz6Hh0fYMP715HVV62N/Ad7L473N5vsd9Jcvfa9IkyAtae
+      PKLvRczfvEfUKZHMz5NNvXxtXLvB4yebQIRqpTFTY9y5NveyjwDlrVU6nkBp77CjXb/c9wK9
+      7LwRrWaDQbND8cYtLH14FQFedsxQwNVrN5nMqHzx2W/YLDdGyyCi62ncnLGIUkWKMxnsrjta
+      hlNHKyxza2GSiaWb9A4Pjst4sU2l2ub2vbtcu3adG1czVKqDkTIg4P6nn9Nut2m323TtwXF7
+      XmzT7nssr9wh4VTYr7ZwvPD494qiQDggMMa4OZdCyy2RthTCIBwpw0wkCZwOSiLP5NQ0Yxnr
+      VHsFvW6Xfq1MbukuMxMWvZ43UoYIPJrtLr7QWF5awLV7p8qAQEtx5+Z1wk6FTz+/T2swWg+C
+      FmpmkbQeMDl3HS1yzrS3VG1x5733mJnIcuPWLHtbjVPt7WOLLLduXGfl5m0Uv4uIRstwDvf5
+      cnX7+Li+OGYv+0iAI5K8/8Edth/dpzNwCE+V4TodxmZvE0Tw3p1r+H37THvT6STtVpeJiTEm
+      Z+bQfvGLX/zi3N55kVSdsbTK2n6VZuWAsZlFpgqpU3M2BdNMkisUKM7OUcgkz/5e9FmrR0zo
+      No2uyuLVmeORYribDJ3qGgcDlWsLM1gJk1QyOVKV8bE0jx4+pt1uUesZ3F2ZGd2PojOWzVAo
+      zjJeyJNOWWfKyCd1ur7O3FyRw9IeqfEZ8qkTw7xioAif/MwiM4UEIgxJZ3MjC0ZVN5menSfs
+      VLCVNHNThVMHTcEyIjb2GswtzKKFIbmxPLr6sgzNzEK/QvmwTeOww7Xbd7D00XOeoihkc3ly
+      YxPMFotY+uilT9Q03eoqamaaXn2X5Ngc47nRS9n5lMaT5xuo2SnmcimMXIGkeWI/SoJE1ObZ
+      doXGQYlc8SqFjDWyHyOdJ5OwKBaLFPI5TDNByjp5zDQSWohi5pmbyrJbOqRYnMHQTrRXSxAR
+      snJ9GSUMUUyTTGr0tUmksszNTrC3vUm2eO1deS9QyMFBkys37jGZT5+7hSJCKqUSV64tktDP
+      GbgUGLgRszPTzEzkz8xpAYRwiESKlRtLWIaONT52ZhvfdcmOTZI2odVx8CIFa+RqnKA/6NAu
+      h4SDFmpqkolTZUSodA9LhH0LjxTT2cSpuipowmWnVEX323hqlolTFQ69Pnv7ZaxkAXPQpNFz
+      GD8aBV7uKCIzPYtT26bnGWQnR8sQUYAfKSwtLdPrNHH6A/JWZmSbjClY394jrYe0egHLK9dJ
+      nGyvAulsjtBIoIYJjHNugglFI5PNkk4Inm0ecHXl1I1ORUE1k6RNFz+wSFsJzrxAUcjAbvGo
+      vEcyO8aVhblTe1EwdJ3S9nP6TkRx4SqWOdoPNCNBYNd4vLdNIp1lbuHKmbp6gw57pSqeOUmy
+      f/iuvB3ap9nxsKvbfPr5A+pd58wWfadDGEQ8f/iAh882Rq5PDwnqzS5hr8rnn39K6dA+U0YY
+      dbH7w7XC518+xQvPrv83dkpMpAQ7DZf5KZXt3fapqh5Sbml4jW20whXqlb0zZezt75PNZNja
+      r3B1Ic3m1uGpivTYqzlY9g4dc5ZBt453NOS/0DgsgZFnc3uTq1cm2d05GC0jCtguNyhENcp+
+      noRq02qNHjfXrtDxMpR2NynOz1PaO1vXjZ0S4wmP3bZgZixiv9Qd3cCrUWmb2LUtrIlFqqXd
+      M2Vs7+wzlk2yXWmwNG+xvtkc3SDosL7TYnpiHCfw2NlcG7lnAnCwv4WvZcniEGk+q1u1U+11
+      Wd8sMTm7wKDfoV3dpmsHI5vYrT0O+wYTmotrJFhb3zlT19XVDcZnZnEGNlG//K4EQCGZybG4
+      coePPnyPXr2MF4weIFU1GJuc4d6H32NlLkfpoHmmlEQqw/zSCt///kfQq9Bzo9G9KDr58Ulu
+      3/uAD27Os7tXOVNG3lJ4tl0lcjpsb9fJjJ26c61nCDr7NOyQVmULT5wdRHNJk42NLUQYsLFe
+      JnW6DNVCcZrstiLc+ja2E6GdGtWSiRSVnTWEgM3Nfcz06FCOopEQDmtVh7C9z2Gjj5kavZqi
+      m1k6B+v4oWB3ZxfFPDWCADkTnu8eEg6a7O01SRVObWNk8VrbtAcRh+UtAuXslbB8ymB1Ywfh
+      u2ysV8hOnG6viYZDrVYjU5ghnz37boCkZdHrNGg4CrOTheMbjSPt1SNqlT3MfJFCPnumDN1I
+      4fWbVLoh81OFc28CphMq1YMyarLAeCH/jqwB0DAVl73SPqVyg/xUkVw6wclB0jQsOs0KO7t7
+      9AONYnEK49Tt75QJu7t7lMo1EvlJJvKpkTIUxcIf1NjZ3aPd8yjOzZ2ZTqXSaXzXQxERZr7I
+      UrEwUgaKTjIBgRguXK9eXyF16kBbqRSh74MQqKlxri9Mjd4QUjSSlkYoIPQDileWyWeskf0Y
+      pgUiREQCxUxzbXEeXTtZhkIqmSAII0QQUphZZGYsPVKGqpkYqiAUCkJRWb527Zz2pvC9ACWK
+      SBRmWZzJn2qvgWVCIFRCP2R55QZJc3QalEyn8T0PhEDLTHF9fuLMuimpB1RbPZQwYKK4MHwr
+      8okyElYSu1XDCVWCUGdxYeb4cuuwDJWkqVKtt1BERKowzURh9PXVDItw0KTrQ+SHzC8snOkj
+      yaRFvVYfFmkV3pERIBywsVNjamYOx+lRK23Sd0anBJ3DPbq+xbjq4Bsaaxv7o2WIiPWNHSaK
+      cziDLl5nn1rTO7WbCqWGwpSl4BkJ1lbXzlRl7fkaYzNzCN8lqTTZLPdHN/AP2Sy5zOQzRKbF
+      9vrqmTJ2Ntcxc5NYwiWZ8FjbaZ1qb4/13SYz09P4UUSttIXnj45WhwfbOEqGvOqipUzWNsuj
+      ZUQ+axv7TM0u4LoOfnefZscf2cTt7lPt6kyZIaRzbKxtnG3v6jrjxTkCz8WK6uxWT00/vSpb
+      lYDprAXJDJurz86UsbG2RmZiBiNySZk2q7u90Q2CDut7PZYX5r52CqSkZ5jQ3a+eAm0dcPX6
+      Cs7XTIHaQY55K/jKKdDa2ibzS9fxHZvIflemQIqBofrUDvax8kUKuQyn17CmmWRgNzjoCeYm
+      C1hn7qgqpEyFaqWMlppgrJA7s85S9DSR2+SgPWB6YvzcN8JlkzrV6gGBnmZq/JwzhJpEiXpU
+      D5sUxqbIps9OKzLJBM1GnW5gUJwsjJ7JABQTQ3GpVSukCjPks+kz7U0kktjdBvU+zE0VSJxu
+      r6JiGYJaZR8jO0UhnztThmakCZwmlbbH7OQYKetsezOWTvWggjBzTJzXXi2NErapNjqMjU+S
+      Oae9uZRJvVajLxLMTBY43dx3eQqEeEdEoS96vb6IhBCH9QPheOGZbTynLxwvECIYiHK1ebaM
+      KBS2bYswikSvXRNt2z+zje85ou94IopCUa4cnFNGJPp2T/hhJIJBXVSb3pltwsAVdt8RkRCi
+      XC6f2x6n3xNeEAnhtUS53j+/vfawvbVqRfhBdGYbd2APj0PQF+Vq65wyAtE7am+nVRXdfnC2
+      ve5ADFxfRKEvyge1r2xvEEbCteui3j6nvb4r7IH7te0d2EftdZuifDj4ivYORCSEODioiDA8
+      p739nnD9UAi/J8q1zvnt7fVFFEWi1aiKvnO2vZ7TP2qvK8oHh+e0d9hHgjASg27tnBXcZRA+
+      T+7fxzcsVKDeavHDH06QOLHe6rcqPHy+SzJpQTigp0xQPHltXAg2H92nLYa3t+3uIVdu/5iT
+      l6xDr82nnzwhlUuDiGgMBMWZ6ZGqlJ4/pOKCqUA4qJGY+y2mCicqEg347P89IJEZXq6tNG2K
+      xeJIGYc7q2w2+iQ0FbwGfu59ihMnFrHC4+Fn9xGJJApQbbT5W789NTLH79X3ebJZwbJMCHr0
+      9TmKU/kTZYSsPbyPrZhoQKfT4Ma9H5NJvpyf+4MGn91fJZVJQeTT8kyK05Mjdd17+gW1QMUA
+      vH6N/OKPmcidbG+f3/zVA5K54eXTantwpr3VzafsdDwSqgJujXD8hxTHT4wUkcsXnz5AtYbH
+      oHzY4e/+7uhxbx9s83zvEMs0wO8wsJYoTp44y4uAZ1/cx9USqECz3eT97/2Y5IkrzE63xheP
+      NkmmkxC5dMIsxenxkf1sP35AM9LRgYFd5/8DjPJOIKGhUz4AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      SUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='24' name='Primer KPI (patent_count total)' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAYAAABKtPtEAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADPElEQVRYhe2YPSxzbRjHf07bh6j4aBtDF4s2ipRYhFgag8EgOmhIGLsyKNJYKGESY20W
+      QyUYuljEgkGCRFMRNFLx0WhS0Tgch7rfQZ4+b1/PO72enjfhN17/3Nd1nf997uvcOQVCCMEX
+      RtK6Aa35NkDrBrTm2wCtG9CabwO0bkBrvg3QugGt+TZA6wa05ssboM9HkdvbW8LhMPF4HJ1O
+      R1tbGy6XC0mSsnowGOTs7Ize3l46Ojqy2j85OTkhGo3S3d39Qbu+vmZra4uuri4KCwtz1iwv
+      L6OqKjU1NbjdboqKit5FkQdWVlbE0dGRyGQyQpZlMT8/L5aWloQQQtzf34uRkRERjUZFJpMR
+      wWBQrK2tfchxdXUlhoaGxODgoJiens7R0um0CAQCwuv1Cr/fLx4eHrJaJBIRY2NjIplMikwm
+      IzY2NsTExIR4eXkRQgiRlyPgdrtxOBxIkkRxcTEul4tYLAbA4eEhDQ0N1NbWIkkSbrebg4OD
+      DzkSiQQ+nw+/3/9r9/6m9fT0MDc3h9lsztF2dnZob2/HYrEgSRLNzc08Pj6SSqUADWaAoiis
+      r6/T3NwMQCwWo7q6OqubzWaMRuOHdU1NTVit1t/mtNls2O3232qtra3s7++jKAoAx8fHVFZW
+      YjKZgDzNAIBQKEQ4HCaTyTA+Pk5dXR0ABQUFOTsqSRLPz8+fVre+vp5UKkVfXx8Gg4Gqqir8
+      fj96/fuj580Aj8eDx+MBIJlMMjk5yfDwMD9+/CCRSOB0OgGQZZmnp6dPqzszM0NnZyerq6vZ
+      2MLCAi0tLTidzj9/BFRVJZ1O58RkWeb19RWdTkdjYyPb29uoqgq8T2yLxfJp9cvKyri4uMip
+      HY/HKS8vB6BAiD/7T1CWZaampkgmk1itVlRV5ebmBp/PR319PW9vbywuLrK7u4vdbicSiRAI
+      BKioqGB0dBSv14vT6SQUChGNRlEUhfPzcxwOB6WlpXi9Xvb29tjc3OT19ZXT01NsNhtGo5GB
+      gQHKysqYnZ1FURRKSkq4vLykv78fl8uVHwN+8vLywt3dHXq9nvLy8g/f+Z+vvslk+tc7wH9B
+      lmVkWaaiogKDwZCN582A/ytf/ir8F7bt6+MG/iB5AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='24' name='Segundo KPI (avg_keyword_score promedio):' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAYAAABKtPtEAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADYklEQVRYhe2YP0hyXxjHP69WmqVpg5VDiVAQTg0FNfdniCRoMAiKICoiagpcHKxwqoZo
+      rCEDQdpyCYKWoMKh6D8OLRllf4wizT9x732Hly74VvRb8v7g7bOdL89z7nO+5zznwP0lSZLE
+      P4xK6QKU5scApQtQmh8DlC5AaX4MULoApfkxQOkClObHAKULUJp/3oC8XH0oFAqxtLREcXEx
+      Q0ND1NTUfBgXiUTw+Xyk02kAnE4ndrsdURTZ29tjfX2dTCZDY2MjbW1tqFQq0uk0y8vLXF5e
+      yvPY7XacTqc8fn5+Zm1tjY6ODgwGg6znxID9/X2CwSAzMzMIgoDX62VkZASr1fouNhwOU1VV
+      RWtrKwAlJSUALCwsoNVqGRsbo7CwkNXVVVZWVujr6+Pp6YloNMrw8DB5eX+WpNFoAEilUvh8
+      PnZ3dzEYDLS0tGQZkJMW2NraoqenB71ej9FopL29nc3NzQ9jr66usFqtmM1mzGYzGo0GQRDo
+      7+9ncHAQg8FAfn4+zc3NxGIxAO7u7igpKcFisch5b8Y9PDxQX1/P4uIilZWV77737QYkEgni
+      8TgVFRWyVl1dzf39PaIovou/ubmhrKwsS1Or1ej1enksiiIbGxuUl5d/mvOGxWKhrq4Olerj
+      pX57C4iiSEFBgXw0AfLy8nh4eCCZTFJUVCTrgiAgSRLj4+PodDocDgfd3d0UFBTIMS8vL8zN
+      zVFaWsrAwAAAKpUKv9+Pz+dDrVZTV1fH6OgoZrP56wKlbyaVSkkej0e6vr6WtYODA8nr9X6Z
+      e3BwIM3Pz0uSJEmRSESamJiQrq6uvsyLx+OSx+ORYrFYlj47Oyvd3Nxkad/eAhqNBpvNxvb2
+      NvDnRIRCIZqamt7FJhIJLi4u5PHh4aG8i4FAgK6urqxWeiMcDme1UyQSIZPJZJ2uz8jJK+Bw
+      OHC73RwdHZFMJtHpdPT29gIQjUaZnJxkenoanU6H3+/n+PgYk8mEyWTC5XKRSCQ4PT1lY2Mj
+      q5dra2uZmpri/Pwct9uNzWYD4Pb2FpfLhUaj4eTkhEAgAMDZ2RnRaBStVis/r78kKTc/RUVR
+      5PHxEbVaLd/QAMFgEEEQ6OzslLXX19f/vIN/zw9gNBo/vfT+JmcGfIQgCOzs7NDQ0JB10eUS
+      RQ34P/AbWrMZ/wlnO70AAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
