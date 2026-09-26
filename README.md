@@ -9,7 +9,7 @@
 
 Análisis exploratorio, estadístico y predictivo del dataset **Ericsson Innovation Timeline: Patent Evolution** (30,118 patentes, 1976-2025), implementado con 6 herramientas distintas para comparar enfoques y validar hallazgos de forma cruzada.
 
-## 🎯 Objetivo
+## Objetivo
 
 Explorar la evolución histórica de la innovación tecnológica de Ericsson a través de sus patentes, identificar tendencias tecnológicas clave (5G, AI/ML, IoT, Cloud), y comparar distintos enfoques de forecasting (estadístico clásico vs. Machine Learning) para predecir el volumen de patentes futuras.
 
@@ -149,8 +149,8 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 </p>
 
 ---
-
 ## 📊 Hallazgos principales del proyecto
+
 
 1. **Dos ciclos de innovación**: la actividad de patentamiento no fue lineal. Se identifican dos "booms" (≈2000 y ≈2012-2025) separados por un período de estancamiento (2004-2010).
 2. **Sin estacionalidad relevante**: confirmado de forma consistente en Python (visual) y R (estadística formal, STL y ARIMA sin componente estacional).
@@ -159,7 +159,7 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 5. **Validación cruzada exitosa**: los totales agregados coinciden exactamente entre Python, SQL, Excel y Power BI, confirmando la integridad del pipeline de datos — y en el proceso se detectó y corrigió un error propio de interpretación de escala.
 6. **El método de forecasting importa**: Tableau (suavizado exponencial) y R (ARIMA) proyectan futuros distintos para la misma serie, evidenciando que la elección de metodología estadística afecta directamente las conclusiones de negocio.
 
-## 🛠️ Herramientas y rol de cada una
+##  Herramientas y rol de cada una
 
 | Herramienta | Rol en el proyecto | Carpeta |
 |---|---|---|
@@ -185,7 +185,7 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 └── screenshots/                     # Capturas de resultados clave, organizadas por herramienta
 ```
 
-## 🚀 Cómo reproducir este análisis
+##  Cómo reproducir este análisis
 
 1. Clona este repositorio
 2. Los notebooks de Python requieren: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
