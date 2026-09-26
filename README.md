@@ -133,7 +133,7 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 <img src="screenshots/powerbi/14_dashboard_completo.png" width="700"/>
 </p>
 
-## 🔮 6. Tableau — Dashboard de Forecasting
+##  6. Tableau — Dashboard de Forecasting
 
 **Qué se hizo:**
 - Conexión y relación entre ambas tablas (con corrección de separador de campo CSV y configuración regional, replicando problemas similares a los de Excel/Power BI).
@@ -149,7 +149,7 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 </p>
 
 ---
-## 📊 Hallazgos principales del proyecto
+##  Hallazgos principales del proyecto
 
 
 1. **Dos ciclos de innovación**: la actividad de patentamiento no fue lineal. Se identifican dos "booms" (≈2000 y ≈2012-2025) separados por un período de estancamiento (2004-2010).
