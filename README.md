@@ -9,7 +9,7 @@
 
 Análisis exploratorio, estadístico y predictivo del dataset **Ericsson Innovation Timeline: Patent Evolution** (30,118 patentes, 1976-2025), implementado con 6 herramientas distintas para comparar enfoques y validar hallazgos de forma cruzada.
 
-## 🎯 Objetivo
+## Objetivo
 
 Explorar la evolución histórica de la innovación tecnológica de Ericsson a través de sus patentes, identificar tendencias tecnológicas clave (5G, AI/ML, IoT, Cloud), y comparar distintos enfoques de forecasting (estadístico clásico vs. Machine Learning) para predecir el volumen de patentes futuras.
 
@@ -101,7 +101,7 @@ Dashboard con pronóstico nativo de Tableau, comparado contra el modelo ARIMA de
 
 ---
 
-## 📊 Hallazgos principales
+##  Hallazgos principales
 
 1. **Dos ciclos de innovación**: la actividad de patentamiento no fue lineal. Se identifican dos "booms" (≈2000 y ≈2012-2025) separados por un período de estancamiento (2004-2010), coincidiendo con las revoluciones de 2G/3G y 4G/5G/smartphones respectivamente.
 
@@ -113,7 +113,7 @@ Dashboard con pronóstico nativo de Tableau, comparado contra el modelo ARIMA de
 
 5. **Validación cruzada exitosa**: los totales agregados (30,118 patentes, distribución por `tech_era`, promedio de `keyword_score`) coinciden exactamente entre Python, SQL, Excel y Power BI, confirmando la integridad del pipeline de datos.
 
-## 🛠️ Herramientas y rol de cada una
+##  Herramientas y rol de cada una
 
 | Herramienta | Rol en el proyecto | Carpeta |
 |---|---|---|
@@ -139,7 +139,7 @@ Dashboard con pronóstico nativo de Tableau, comparado contra el modelo ARIMA de
 └── screenshots/                     # Capturas de resultados clave, organizadas por herramienta
 ```
 
-## 🚀 Cómo reproducir este análisis
+##  Cómo reproducir este análisis
 
 1. Clona este repositorio
 2. Los notebooks de Python requieren: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
