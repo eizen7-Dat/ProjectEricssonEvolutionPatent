@@ -54,7 +54,7 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 </tr>
 </table>
 
-## 📈 2. R — Series de Tiempo y ARIMA
+##  2. R — Series de Tiempo y ARIMA
 
 **Qué se hizo:**
 - **Descomposición STL** de la serie `patent_count` trimestral, separándola en tendencia, estacionalidad y residuo.
@@ -192,6 +192,6 @@ Explorar la evolución histórica de la innovación tecnológica de Ericsson a t
 3. El script de R requiere: `tidyverse`, `tseries`, `forecast`, `lubridate`
 4. Los dashboards de Power BI/Tableau se abren directamente con sus respectivos programas (Power BI Desktop / Tableau Desktop)
 
-## 👤 Autor
+##  Autor
 
 **Francesco Alonso Salazar Franco**
