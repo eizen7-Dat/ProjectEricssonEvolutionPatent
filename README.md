@@ -27,7 +27,7 @@ Limpieza de datos, separación en niveles (patente/trimestre), 6 visualizaciones
 
 <table>
 <tr>
-<td><img src="C:\Users\Pc\Documents\ProjectEricssonEvolutionPatent\screenshots\python_eda" width="400"/></td>
+<td><img src="screenshots/python_eda/01_evolucion_patent_count.png" width="400"/></td>
 <td><img src="screenshots/python_eda/03_tendencias_tecnologicas.png" width="400"/></td>
 </tr>
 <tr>
